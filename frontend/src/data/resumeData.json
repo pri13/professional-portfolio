@@ -1,0 +1,98 @@
+{
+    "personalInfo": {
+      "name": "John Doe",
+      "title": "Full Stack Developer",
+      "contact": {
+        "email": "john.doe@example.com",
+        "phone": "123-456-7890",
+        "address": "123 Main St, Anytown, USA",
+        "website": "https://johndoe.com",
+        "linkedin": "https://linkedin.com/in/johndoe",
+        "github": "https://github.com/johndoe"
+      },
+      "summary": "Experienced Full Stack Developer with a strong background in web technologies and a passion for building scalable applications."
+    },
+    "experience": [
+      {
+        "company": "Tech Company",
+        "position": "Senior Software Engineer",
+        "startDate": "January 2020",
+        "endDate": "Present",
+        "location": "Anytown, USA",
+        "responsibilities": [
+          "Lead the development of a large-scale web application.",
+          "Collaborate with cross-functional teams to define and implement new features.",
+          "Mentor junior developers and conduct code reviews."
+        ]
+      },
+      {
+        "company": "Another Tech Company",
+        "position": "Software Engineer",
+        "startDate": "June 2016",
+        "endDate": "December 2019",
+        "location": "Anytown, USA",
+        "responsibilities": [
+          "Developed and maintained web applications using React and Node.js.",
+          "Worked closely with product managers to design and implement user interfaces.",
+          "Improved application performance and reduced load times by optimizing code."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Example",
+        "degree": "Bachelor of Science in Computer Science",
+        "startDate": "September 2012",
+        "endDate": "May 2016",
+        "location": "Anytown, USA"
+      }
+    ],
+    "skills": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "HTML",
+      "CSS",
+      "SQL",
+      "NoSQL",
+      "Git",
+      "RESTful APIs"
+    ],
+    "projects": [
+      {
+        "name": "Project One",
+        "description": "A web application that allows users to track their fitness goals and progress.",
+        "technologies": ["React", "Node.js", "MongoDB"],
+        "link": "https://github.com/johndoe/project-one"
+      },
+      {
+        "name": "Project Two",
+        "description": "An e-commerce platform with a recommendation system based on user preferences.",
+        "technologies": ["React", "Express", "PostgreSQL"],
+        "link": "https://github.com/johndoe/project-two"
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Certified Kubernetes Administrator",
+        "issuer": "Cloud Native Computing Foundation",
+        "date": "June 2020"
+      },
+      {
+        "name": "AWS Certified Solutions Architect",
+        "issuer": "Amazon Web Services",
+        "date": "December 2018"
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "Native"
+      },
+      {
+        "language": "Spanish",
+        "proficiency": "Intermediate"
+      }
+    ]
+  }
+  
