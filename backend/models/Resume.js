@@ -1,5 +1,21 @@
-// backend/models/Resume.js
 import mongoose from 'mongoose';
+
+const SkillSchema = new mongoose.Schema({
+  technology: { type: String, required: true },
+  proficient: { type: Boolean, required: true },
+  rating: { type: Number, required: true },
+  used_in: { type: String }
+});
+
+const SkillsSchema = new mongoose.Schema({
+  Database: [SkillSchema],
+  UI: [SkillSchema],
+  NET: [SkillSchema],
+  javascript: [SkillSchema],
+  versionControl: [SkillSchema]
+}, {
+  _id: false // Exclude _id field from this sub-schema
+});
 
 const ResumeSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
@@ -14,6 +30,7 @@ const ResumeSchema = new mongoose.Schema({
   },
   linkedin: { type: String },
   github: { type: String },
+  summary: { type: String },
   education: [{
     degree: String,
     institution: String,
@@ -27,13 +44,11 @@ const ResumeSchema = new mongoose.Schema({
     company: String,
     startDate: Date,
     endDate: Date,
+    jobType: String,
     location: { city: String, state: String },
     responsibilities: [String]
   }],
-  skills: [{
-    skillName: String,
-    proficiency: String
-  }],
+  skills: SkillsSchema,
   projects: [{
     projectTitle: String,
     description: String,
@@ -55,8 +70,8 @@ const ResumeSchema = new mongoose.Schema({
     proficiency: String
   }],
   CreatedDateTime: {
-    type:Date,
-    default:Date.now
+    type: Date,
+    default: Date.now
   }
 });
 

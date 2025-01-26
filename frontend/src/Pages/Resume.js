@@ -1,11 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {Typography, IconButton, Toolbar, AppBar, Button} from '@mui/material';
+import {Typography, IconButton, Toolbar, AppBar, Button, Link} from '@mui/material';
 import {Box, Grid ,Paper, Container, Avatar } from '@mui/material';
-import {LinkedInIcon, GitHubIcon,  InstagramIcon} from '@mui/icons-material';
 import { Card, CardContent, CardMedia, CardActions, CardHeader } from '@mui/material';
 import ProjectCard from '../components/ProjectCard';
-import { useLocation } from 'react-router-dom';
+import Education from '../components/Resume/Education.js'
+import Experience from '../components/Resume/Experience.js'
+import Summary  from '../components/Resume/Summary.js';
+import Skills from '../components/Resume/Skills.js';
+
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub'
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+
 
 const MyResumePage = ({data}) => {
     const [user, setUser] = useState([]);
@@ -22,96 +30,90 @@ const MyResumePage = ({data}) => {
     
         fetchUser();
       }, []);
+
+      const buttons = [
+        { name: "LinkedIn", icon: <LinkedInIcon />, url:`${user.linkedin}` },
+        { name: "GitHub", icon: <GitHubIcon />, url:`${user.github}`},
+        
+      ];
+
+      const openInNewTab = (url) => {
+          const win = window.open(url, '_blank');
+          if (win != null) {
+              win.focus();
+          }
+      };
    
   return (
       <Box sx={{ display: 'flex', flexDirection: 'column', m: 2 }}>
-          <Grid container spacing={3}>
+          <Grid container spacing={1}>
               {/* Profile Picture and Introduction */}
-              <Grid item xs={12} md={12}>
-              
-                      <Card>
-                          <CardContent>
-                              <Grid container spacing={2} >
-                                  {/* Image (Avatar) on the left */}
-                                  <Grid item xs={12} sm={4}>
-                                      <Avatar sx={{ width: 200, height: 200, mb: 2, mx: 'auto' }} src="/Assets/me.png" />
-                                  </Grid>
-                                  {/* Text content on the right */}
-                                  <Grid item xs={12} sm={8}>
-                                      <Typography variant="h5" gutterBottom>
-                                          {user.firstName} {user.lastName}
-                                      </Typography>
-                                      <Typography variant="subtitle1" gutterBottom>
-                                          Software Developer | React.js, Node.js
-                                      </Typography>
-                                      <Typography variant="body1">
-                                          Passionate about creating elegant solutions to complex problems. I enjoy learning new technologies and collaborating on innovative projects.
-                                      </Typography>
-                                  </Grid>
+              <Grid item xs={12} md={12} >
+                  <Card sx={{ p: 0, bgcolor: '#dff0d8' }}>
+                      <CardContent>
+                          <Grid container spacing={4} justifyContent="center" alignItems="center">
+                              {/* Image (Avatar) on the left */}
+                              <Grid item xs={12} md={4} container justifyContent="center">
+                                  <Avatar sx={{ width: 200, height: 200, mb: 2 }} src="/Assets/me.png" />
                               </Grid>
-                          </CardContent>
-                          {/* <CardActions sx={{ justifyContent: 'center' }}>
-                              <Button variant="outlined" color="primary">
-                                  Action 1
-                              </Button>
-                              <Button variant="outlined" color="error">
-                                  Action 2
-                              </Button>
-                          </CardActions> */}
-                      </Card>
-               
-                  <ProjectCard title={'Education'}
-                      description={'Led development projects, collaborated with cross-functional teams'}
-                      imageUrl={null} >
-                  </ProjectCard>
-                  <Paper sx={{ p: 2, my: 4 }}>
-                      {/* <pre>
-        {JSON.stringify(user.experience, null, 2)}
-      </pre> */}
-                      <Typography variant="h6" gutterBottom>
-                          Skills & Interests
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                          - React.js, Node.js, JavaScript <br />
-                          - UI/UX Design, Responsive Web Design <br />
-                          - Photography, Traveling, Music <br />
-                          - Open Source Contribution, Blogging <br />
-                      </Typography>
-                  </Paper>
+                              {/* Text content on the right */}
+                              <Grid item xs={12} md={8} container justifyContent="center">
+                                  <div>
+                                      <Typography variant="h5" gutterBottom align="center">
+                                          {user.firstName} {user.lastName} | BSCE
+                                      </Typography>
+                                      <Typography variant="subtitle1" gutterBottom align="center"  >
+                                          <strong>Senior Full Stack Software Engineer</strong>
+                                      </Typography>
+                                      <Typography variant="subtitle1" gutterBottom align="center">
+                                          Location: {user.address?.city}, {user.address?.state}
+                                      </Typography>
+                                      <Typography variant="subtitle1" gutterBottom align="center">
+                                          Phone: {user.phone}
+                                      </Typography>
+                                      <Typography variant="subtitle1" gutterBottom align="center">
+                                          Email: {user.email}
+                                      </Typography>
+                                      <Box sx={{ display: 'flex' }}>
+                                          {buttons.map((button) => (
+                                              <Button sx={{ marginRight: '8px' }}
+                                                  variant="outlined" color="success"
+                                                  key={button.name}
+                                                  startIcon={button.icon}
+                                                  onClick={() => openInNewTab(button.url)}>
+                                                  {button.name}
+                                              </Button>
+                                          ))}
+                                          <Button target="_blank" href='/Priyank Patel 2.3.pdf' variant="outlined" color="success" onClick={() => openInNewTab('')}>
+                                              <SaveAltIcon />Download Resume
+                                          </Button>
+                                      </Box>
+                                  </div>
+                              </Grid>
+                          </Grid>
+                      </CardContent>
+                  </Card>
               </Grid>
-              {/* Skills and Interests */}
-              <Grid item xs={12} md={8} >
-                  <ProjectCard title={'Education' }>
-                      description={'Led development projects, collaborated with cross-functional teams'}
-                      imageUrl={null} 
-                  </ProjectCard>
-                 
-                  <ProjectCard title={'Experience'}
-                      description={'Led development projects, collaborated with cross-functional teams'}
-                      imageUrl={null} >
-                  </ProjectCard>
+              <Grid item xs={12} md={6}>
+                  <Grid container>
+                      <Grid item sm={12}>
+                          <Education data={user.education}></Education>
+                      </Grid>
+                      <Grid item sm={12}>
+                        <Skills skills = {user.skills} ></Skills>
+                      </Grid>
+                  </Grid>
               </Grid>
-              {/* Experience */}
-              <Grid item xs={12}>
-
-              </Grid>
-
-              {/* Education */}
-              <Grid item xs={12}>
-
-              </Grid>
-
-              {/* Contact */}
-              <Grid item xs={12}>
-                  <Paper sx={{ p: 2 }}>
-                      <Typography variant="h6" gutterBottom>
-                          Contact Me
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                          Email: john.doe@example.com <br />
-                          Phone: +123 456 7890 <br />
-                      </Typography>
-                  </Paper>
+              {/* Summary */}
+              <Grid item sm={12} md={6}>
+                  <Grid container>
+                      <Grid item sm={12} md={12} >
+                          <Summary summary={user.summary}></Summary>
+                      </Grid>
+                      <Grid item sm={12} md={12}>
+                          <Experience experience={user.experience}></Experience>
+                      </Grid>
+                  </Grid>
               </Grid>
           </Grid>
       </Box>

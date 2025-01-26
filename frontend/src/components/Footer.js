@@ -15,7 +15,7 @@ const Footer = () => (
       <IconButton color="inherit" href="https://www.linkedin.com/in/priyank-patel-bsce-soft-dev">
         <LinkedInIcon />
       </IconButton>
-      <IconButton color="inherit" href="https://github.com/johndoe">
+      <IconButton color="inherit" href="https://github.com/pri13">
         <GitHubIcon />
       </IconButton>
     </Toolbar>

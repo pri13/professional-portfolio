@@ -1,5 +1,6 @@
 import * as React from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import {Typography, IconButton, Toolbar, AppBar, Box} from '@mui/material';
 import {Menu, Container, Avatar, Button, MenuItem,Tooltip} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -10,13 +11,11 @@ import DescriptionIcon from '@mui/icons-material/Description';
 
 
 const pages = [
-  { pageName: "About Me", icon: <PersonIcon /> },
-  { pageName: "Contact", icon: <MailOutlineIcon /> },
-  { pageName: "Projects", icon: <WorkOutlineIcon /> },
-  { pageName: "Resume", icon: <DescriptionIcon /> }
+  { pageName: "About Me", icon: <PersonIcon />, path:"/about" },
+  { pageName: "Projects", icon: <WorkOutlineIcon />, path:"/projects"},
+  { pageName: "Resume", icon: <DescriptionIcon />, path:"/resume"}
 ];
 
-// const pages = ['About Me', 'Contact', 'Projects', 'Resume' ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
@@ -48,12 +47,12 @@ function Header() {
       <Container maxWidth="x2">
         <Toolbar disableGutters>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-          <Box sx={{ flexGrow: 0 }}>
-            <Avatar sx={{
-              border: '2px solid green', // Set border color to white
-            }} alt="Pri Patel" src="/Assets/me.png" />
-          </Box>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ flexGrow: 0 }}>
+              <Avatar sx={{
+                border: '2px solid green', // Set border color to white
+              }} alt="Pri Patel" src="/Assets/me.png" />
+            </Box>
+            {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -88,17 +87,18 @@ function Header() {
               ))}
             </Menu>
           </Box> */}
-
             <Box sx={{ display: 'flex' }}>
               {pages.map((page) => (
                 <Button sx={{ marginRight: '8px' }}
-                 variant="outlined" color="success"
+                  variant="outlined" color="success"
                   key={page.pageName}
-                  startIcon={page.icon}>
+                  startIcon={page.icon}
+                  component ={Link}
+                  to={page.path} >
                   {page.pageName}
                 </Button>
               ))}
-            </Box>  
+            </Box>
           </Box>
              
         </Toolbar>

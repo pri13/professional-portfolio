@@ -1,105 +1,63 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import { Card, CardContent, CardMedia, CardActions, CardHeader } from '@mui/material';
+import { Container, Grid, Box, Typography, Avatar } from '@mui/material';
 
-const AboutMePage = () => {
+import SwipeableTextMobileStepper from '../components/SwipeableTextMobileStepper'
+
+const AboutMe = () => {
   return (
-      <Box sx={{ display: 'flex', flexDirection: 'column',  m:2 }}>
-          {/* Main content */}
-              <Grid container spacing={3}>
-                  {/* Profile Picture and Introduction */}
-                  <Grid item xs={12} md={4}>
-                      <Paper sx={{ p: 2, textAlign: 'center' }}>
-                          <Avatar sx={{ width: 150, height: 150, mb: 2, mx: 'auto' }} src="/Assets/me.png" />
-                          <Typography variant="h5" gutterBottom>
-                              Priyank Patel
-                          </Typography>
-                          <Typography variant="subtitle1" gutterBottom>
-                              Software Developer | React.js, Node.js
-                          </Typography>
-                          <Typography variant="body1">
-                              Passionate about creating elegant solutions to complex problems. I enjoy learning new technologies and collaborating on innovative projects.
-                          </Typography>
-                      </Paper>
-                      
-                      <Paper sx={{ p: 2, my:4 }}>
-                          <Typography variant="h6" gutterBottom>
-                              Skills & Interests
-                          </Typography>
-                          <Typography variant="body1" gutterBottom>
-                              - React.js, Node.js, JavaScript <br />
-                              - UI/UX Design, Responsive Web Design <br />
-                              - Photography, Traveling, Music <br />
-                              - Open Source Contribution, Blogging <br />
-                          </Typography>
-                      </Paper>
-                  </Grid>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      minHeight="100vh"
+      bgcolor="#dff0d8"
+      padding={1}
+    >
+      <Grid container spacing={1}>
+        {/* Left Side - Image */}
+        <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
+          <Box sx={{ pt: 6 }} display="flex" justifyContent="center" alignItems="center" >
+            <SwipeableTextMobileStepper />
+          </Box>
+        </Grid>
+        {/* Right Side - Information */}
+        <Grid item xs={12} md={6} >
+          <Typography variant="h3" component="h1" gutterBottom>
+            Priyank (Pri) Patel, BSCE
+          </Typography>
+          <Typography variant="h5" component="h2" gutterBottom sx={{ textDecoration: 'underline' }}>
+            Senior Software Engineer at Sedgwick | Computer Engineering Degree
+          </Typography>
+          <Typography variant="body1" paragraph>
+            I am passionate about personal growth and exploration, both professionally and personally. I dedicate time to fitness and enjoy the energy and discipline that come from working out at the gym. I have a deep love for outdoor activities, including rock climbing, hiking, and exploring nature, which fuel my adventurous spirit. Additionally, I am passionate about sports, appreciating the dedication, strategy, and teamwork they inspire. Beyond physical pursuits, I also enjoy traveling and immersing myself in new cultures, gaining fresh perspectives that spark creativity and innovation in my work. I’m a true enthusiast for good coffee and can’t resist indulging in delicious desserts, always on the hunt for the next perfect combination of flavors. These small joys bring balance and delight to my day-to-day life.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            Professionally, I have been working in the IT industry, specifically within the healthcare sector, for over five years. During this time, I have dedicated myself to writing software that enhances end-user experiences, solves complex problems, and creates value-driven products. My work is centered on leveraging technology to make meaningful impacts, improving efficiency and outcomes in a domain as critical as healthcare.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            I received my Bachelor's in Computer Engineering from the University of Central Florida, an institution that played a significant role in shaping me into the person I am today. The university provided me with the necessary education and core foundation to thrive in my career and pursue my passion for technology.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            As a technology enthusiast, I am deeply committed to learning emerging technologies and applying them to solve complex problems through efficient and optimal solutions. With a lifelong love for computers, I find immense joy in working with technology, whether it’s tackling challenging projects, optimizing workflows, or driving impactful digital transformations.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            Beyond my personal interests, I am passionate about investing wisely. Whether it’s in stocks, business ventures, or opportunities that create long-term value, I enjoy strategically placing my resources where they matter most.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            Above all, I value spending quality time with my family and friends. Whether it’s celebrating special moments or simply enjoying meaningful conversations, I cherish the connections that bring warmth and happiness to my life.
+          </Typography>
+          <Typography variant="body1" component="h5">
+            Lastly, I am a U.S. citizen and have been living in Jacksonville, FL for the last 20+ years.
+          </Typography>
+          <Typography variant="h5" component="h5">
+            Work Hard, Play Hard...
+          </Typography>
+        </Grid>
+      </Grid>
 
-
-                  {/* Skills and Interests */}
-                  <Grid item xs={12} md={8}>
-                  <Paper sx={{ p: 2,mb:1 }}>
-                          <Typography variant="h6" gutterBottom>
-                              Education
-                          </Typography>
-                          <Typography variant="subtitle1" gutterBottom>
-                              B.S. in Computer Science, University of XYZ (2014 - 2018)
-                          </Typography>
-                      </Paper>
-                  <Card>
-                          <CardHeader
-                              title="Experience"
-                              sx={{ background: "#efe7d469", color: 'green', p:1 }}>
-                          </CardHeader>
-                          <CardContent>
-                              <Typography variant="subtitle1" gutterBottom>
-                                  Software Developer at ABC Tech (2018 - Present)
-                              </Typography>
-                              <Typography variant="body1">
-                                  Led development projects, collaborated with cross-functional teams, and optimized application performance.
-                              </Typography>
-                          </CardContent>
-                      </Card>
-
-                     
-                  </Grid>
-
-                  {/* Experience */}
-                  <Grid item xs={12}>
-                     
-                  </Grid>
-
-                  {/* Education */}
-                  <Grid item xs={12}>
-                     
-                  </Grid>
-
-                  {/* Contact */}
-                  <Grid item xs={12}>
-                      <Paper sx={{ p: 2 }}>
-                          <Typography variant="h6" gutterBottom>
-                              Contact Me
-                          </Typography>
-                          <Typography variant="body1" gutterBottom>
-                              Email: john.doe@example.com <br />
-                              Phone: +123 456 7890 <br />
-                          </Typography>
-                      </Paper>
-                  </Grid>
-              </Grid>
-      </Box>
+    </Box>
   );
 };
 
-export default AboutMePage;
+export default AboutMe;

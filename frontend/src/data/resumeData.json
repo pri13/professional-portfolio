@@ -1,98 +1,354 @@
 {
-    "personalInfo": {
-      "name": "John Doe",
-      "title": "Full Stack Developer",
-      "contact": {
-        "email": "john.doe@example.com",
-        "phone": "123-456-7890",
-        "address": "123 Main St, Anytown, USA",
-        "website": "https://johndoe.com",
-        "linkedin": "https://linkedin.com/in/johndoe",
-        "github": "https://github.com/johndoe"
-      },
-      "summary": "Experienced Full Stack Developer with a strong background in web technologies and a passion for building scalable applications."
+  "firstName": "Priyank",
+  "lastName": "Patel",
+  "email": "Priyankp295@gmail.com",
+  "phone": "904-476-4933",
+  "address": {
+    "street": "10835 Happy Vale Road",
+    "city": "Jacksonville",
+    "state": "FL",
+    "zip": "32246"
+  },
+  "linkedin": "https://www.linkedin.com/in/priyank-patel-bsce-soft-dev",
+  "github": "https://github.com/pri13",
+  "summary": "As a driven Software Engineer experienced in agile methodologies, I bring a wealth of skills, passion, and ambition to every software development cycle. My proficiency spans multiple programming languages, encompassing new feature development and implementation. I have a proven track record in enhancing full-stack expertise, specializing in building interactive and mobile-friendly web designs. Additionally, I excel in debugging existing applications to optimize workflows and transforming applications into scalable, efficient standalone solutions.",
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Engineering - BSCE",
+      "institution": "University of Central Florida",
+      "startDate": "2013-08-01",
+      "endDate": "2017-12-30",
+      "gpa": 3.8,
+      "location": {
+        "city": "Orlando",
+        "state": "Florida"
+      }
     },
-    "experience": [
+    {
+      "degree": "Associate in Arts",
+      "institution": "Florida State College at Jacksonville",
+      "startDate": "2010-01-01",
+      "endDate": "2013-05-30",
+      "gpa": 3.8,
+      "location": {
+        "city": "Orlando",
+        "state": "Florida"
+      }
+    }
+  ],
+  "experience": [
+    {
+      "jobTitle": "Sr IT Software Development Advisor",
+      "company": "Sedgwick",
+      "startDate": "2022-07-01",
+      "endDate": null,
+      "currentlyWoking": "true",
+      "location": {
+        "city": "Tennesse",
+        "state": "USA"
+      },
+      "jobType": "Remote",
+      "responsibilities": [
+        "I played a key role in the post-acquisition integration of Sedgwick and Orchid Medical applications, with a focus on seamless data retrieval and utilization. My responsibilities encompassed facilitating Sedgwick developers' understanding of Orchid Medical's applications, aiding in their onboarding, and providing knowledge transfer. Additionally, I contributed to implementing new features and optimizing workflows to enhance the overall experience for Sedgwick's end users.",
+        "As the product owner and subject matter expert for the company's EDI solutions, I spearheaded the effort to refactor existing code and developed a robust system for generating 837/835 files by building standalone Project using .NET Core (.NET 6), facilitating seamless billing information transmission via FTP to clearing house companies such as Conduent, Data Dimensions, and Mitchell, etc. This comprehensive project involved rewriting back-end services to accommodate data transmission to multiple bill review companies, including client-specific customizations and custom FTP site access. I also ensured compliance with state reporting guidelines, resulting in substantial enhancements to our data exchange capabilities."
+      ]
+    },
+    {
+      "jobTitle": "Software Engineer",
+      "company": "Orchid Medical",
+      "startDate": "2019-02-01",
+      "endDate": "2022-08-01",
+      "currentlyWoking": "false",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "jobType": "OnSite",
+      "responsibilities": [
+        "Collaborated with a diverse team of 4 developers to spearhead the end-to-end development of a sophisticated web application, streamlining the referral system for a Workers' Compensation Claims Management Company. Utilized a tech stack that included Vue.js, JavaScript, ASP.NET, OAuth/OWIN middleware, WebAPI, C#, ADO.NET, and Entity Framework, resulting in an efficient solution for managing workers' compensation claims referrals.",
+        "Set up a secure UI-Authentication Server-Resource Server architecture for smooth authentication and resource access. Meticulously designed the user interface with Vue.js, creating secure connections to the ASP.NET Authentication Server and Resource Server for user authentication and resource retrieval.",
+        "Built the Resource Server, featuring a powerful Web API written in C#, a robust Business Layer, and a Data Access Layer utilizing ADO.NET and Entity Framework. This system was supported by a SQL Server database.",
+        "Collaborated with operations and finance teams to gather requirements. Developed Vue.js pages, components, and mix-ins using HTML, CSS, Bootstrap 4.0, and Font Awesome, effectively meeting business needs with a user-friendly and appealing UI design.",
+        "Demonstrated strong SQL skills in actively managing the SQL Server database, including optimizing tables, creating stored procedures, functions, and indexes, and efficiently handling data loading tasks via the Import/Export Data Wizard.",
+        "Enhanced our web application by integrating external third-party APIs, incorporating valuable features:\n- Integrated USPS/FEDEX APIs for tracking and shipping, providing users with easy access to these services.\n- Utilized a website API to access the NPI Registry, offering comprehensive provider information for healthcare seekers.\n- Collaborated with Cdyne, a text messaging services provider, enabling text communication with users, enhancing engagement."
+      ]
+    },
+    {
+      "jobTitle": "Software Engineer",
+      "company": "AllScripts",
+      "startDate": "2018-07-01",
+      "endDate": "2019-02-01",
+      "currentlyWoking": "false",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "jobType": "OnSite",
+      "responsibilities": [
+        "Collaborated with a diverse team of 4 developers to spearhead the end-to-end development of a sophisticated web application, streamlining the referral system for a Workers' Compensation Claims Management Company. Utilized a tech stack that included Vue.js, JavaScript, ASP.NET, OAuth/OWIN middleware, WebAPI, C#, ADO.NET, and Entity Framework, resulting in an efficient solution for managing workers' compensation claims referrals.",
+        "Set up a secure UI-Authentication Server-Resource Server architecture for smooth authentication and resource access. Meticulously designed the user interface with Vue.js, creating secure connections to the ASP.NET Authentication Server and Resource Server for user authentication and resource retrieval.",
+        "Built the Resource Server, featuring a powerful Web API written in C#, a robust Business Layer, and a Data Access Layer utilizing ADO.NET and Entity Framework. This system was supported by a SQL Server database.",
+        "Collaborated with operations and finance teams to gather requirements. Developed Vue.js pages, components, and mix-ins using HTML, CSS, Bootstrap 4.0, and Font Awesome, effectively meeting business needs with a user-friendly and appealing UI design.",
+        "Demonstrated strong SQL skills in actively managing the SQL Server database, including optimizing tables, creating stored procedures, functions, and indexes, and efficiently handling data loading tasks via the Import/Export Data Wizard.",
+        "Enhanced our web application by integrating external third-party APIs, incorporating valuable features:\n- Integrated USPS/FEDEX APIs for tracking and shipping, providing users with easy access to these services.\n- Utilized a website API to access the NPI Registry, offering comprehensive provider information for healthcare seekers.\n- Collaborated with Cdyne, a text messaging services provider, enabling text communication with users, enhancing engagement.",
+        "Successfully worked within an Agile development environment, participating in four-week sprints, managing feature and bug ticketing, and contributing to epics, stories, and tasks documentation using Jira and Confluence.",
+        "Significantly contributed to the design and management of a modular web application utilizing AngularJS, .NET 4.5 (Web API, C#, Entity Framework/ADO), HTML, CSS (Bootstrap 4), jQuery, and JavaScript (Vanilla & Underscore). The application streamlined the integration process, enabling faster data loading of providers/Facilities into the HealthGrid system, viewing patient communication logs (texts, emails), and providing the ability to view and update patient records outside of the main application used internally by admin professionals. Additionally, it offered the capability to seamlessly turn on/off products for clients and allowed for customized workflow configurations. This comprehensive solution resulted in a remarkable 30% reduction in onboarding times, greatly enhancing operational efficiency and overall organizational performance.",
+        "9. Proficiently managed version control systems, including SVN, ensuring efficient collaboration and code management within the development team."
+      ]
+    },
+    {
+      "jobTitle": "Software Engineer Intern",
+      "company": "HealthGrid",
+      "startDate": "2017-01-01",
+      "endDate": "2018-06-01",
+      "currentlyWoking": "false",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "jobType": "OnSite",
+      "responsibilities": [
+        "Started as Support Engineer, promoted to Software Engineer, resolving front-end and back-end issues for system stability and enhanced features.",
+        "Maintained coding excellence, ensuring software functionality and client satisfaction.",
+        "Integrated Hospital EMR systems using Mirth Connect for seamless data management.",
+        "Collaborated on Vue.js, JavaScript, ASP.NET, OAuth, WebAPI, C#, ADO.NET, Entity Framework for streamlined claims management.",
+        "Designed secure UI-Authentication Server-Resource Server with Vue.js and ASP.NET for user authentication and data security.",
+        "Built robust Resource Server with C#, Web API, SQL Server for optimized data handling and performance.",
+        "Developed user-friendly Vue.js interfaces using HTML, CSS, Bootstrap, Font Awesome for effective business solutions.",
+        "Optimized SQL Server databases, enhancing data integrity and performance.",
+        "Managed Agile feature and bug tracking, contributing to efficient project cycles.",
+        "Designed modular web app with AngularJS, .NET, HTML/CSS (Bootstrap), jQuery, JavaScript, reducing HealthGrid onboarding by 30%.",
+        "Successfully implemented payment gateways, including Authorize.net and Trust Commerce, and developed a back-end service to handle payment processing, refunds, and API response recording, improving payment processing efficiency for clients."
+      ]
+    }
+  ],
+  "skills": {
+    "Database": [
       {
-        "company": "Tech Company",
-        "position": "Senior Software Engineer",
-        "startDate": "January 2020",
-        "endDate": "Present",
-        "location": "Anytown, USA",
-        "responsibilities": [
-          "Lead the development of a large-scale web application.",
-          "Collaborate with cross-functional teams to define and implement new features.",
-          "Mentor junior developers and conduct code reviews."
-        ]
+        "technology": "Microsoft SQL Server",
+        "proficient": true,
+        "rating": 5
       },
       {
-        "company": "Another Tech Company",
-        "position": "Software Engineer",
-        "startDate": "June 2016",
-        "endDate": "December 2019",
-        "location": "Anytown, USA",
-        "responsibilities": [
-          "Developed and maintained web applications using React and Node.js.",
-          "Worked closely with product managers to design and implement user interfaces.",
-          "Improved application performance and reduced load times by optimizing code."
-        ]
-      }
-    ],
-    "education": [
-      {
-        "institution": "University of Example",
-        "degree": "Bachelor of Science in Computer Science",
-        "startDate": "September 2012",
-        "endDate": "May 2016",
-        "location": "Anytown, USA"
-      }
-    ],
-    "skills": [
-      "JavaScript",
-      "React",
-      "Node.js",
-      "HTML",
-      "CSS",
-      "SQL",
-      "NoSQL",
-      "Git",
-      "RESTful APIs"
-    ],
-    "projects": [
-      {
-        "name": "Project One",
-        "description": "A web application that allows users to track their fitness goals and progress.",
-        "technologies": ["React", "Node.js", "MongoDB"],
-        "link": "https://github.com/johndoe/project-one"
+        "technology": "MySQL",
+        "proficient": true,
+        "rating": 4
       },
       {
-        "name": "Project Two",
-        "description": "An e-commerce platform with a recommendation system based on user preferences.",
-        "technologies": ["React", "Express", "PostgreSQL"],
-        "link": "https://github.com/johndoe/project-two"
+        "technology": "Google Firebase",
+        "proficient": true,
+        "rating": 3
       }
     ],
-    "certifications": [
+    "UI": [
       {
-        "name": "Certified Kubernetes Administrator",
-        "issuer": "Cloud Native Computing Foundation",
-        "date": "June 2020"
+        "technology": "HTML",
+        "proficient": true,
+        "rating": 5
       },
       {
-        "name": "AWS Certified Solutions Architect",
-        "issuer": "Amazon Web Services",
-        "date": "December 2018"
+        "technology": "CSS",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "Bootstrap 4",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": "Tailwind",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "Semantic UI",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "Material UI",
+        "proficient": true,
+        "rating": 4
       }
     ],
-    "languages": [
+    "ASP.NET": [
       {
-        "language": "English",
-        "proficiency": "Native"
+        "technology": "C#",
+        "proficient": true,
+        "rating": 5
       },
       {
-        "language": "Spanish",
-        "proficiency": "Intermediate"
+        "technology": "MVC",
+        "proficient": true,
+        "rating": 3
+      },
+      {
+        "technology": "WebForms",
+        "proficient": true,
+        "rating": 3
+      },
+      {
+        "technology": "WEBAPI",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": "WCF",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "ADO.NET",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": "EF",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": "REST",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": "SOAP",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "LINQ",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "Lambda",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "Unit of Work",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "Repository Pattern",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": "XML",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": ".NET Core",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "JWT",
+        "proficient": true,
+        "rating": 4
+      }
+    ],
+    "Javascript": [
+      {
+        "technology": "AngularJS",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "ReactJs",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "VueJs",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "Lodash",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": "NodeJS",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "NPM",
+        "proficient": true,
+        "rating": 4
+      },
+      {
+        "technology": "JSON",
+        "proficient": true,
+        "rating": 5
+      },
+      {
+        "technology": "TypeScript",
+        "proficient": false,
+        "rating": 2
+      }
+    ],
+    "versionControl": [
+      {
+        "technology": "TFS",
+        "proficient": true,
+        "rating": 5,
+        "used_in": "Orchid Medical"
+      },
+      {
+        "technology": "SVN",
+        "proficient": true,
+        "rating": 3,
+        "used_in": "Allscripts"
+      },
+      {
+        "technology": "Git",
+        "proficient": true,
+        "rating": 4,
+        "used_in": "Personal"
       }
     ]
-  }
-  
+  },
+  "projects": [
+    {
+      "projectTitle": "Personal Website",
+      "description": "Created a personal website using React",
+      "technologies": [
+        "React",
+        "JavaScript",
+        "CSS"
+      ],
+      "link": "https://johndoe.com",
+      "startDate": "2020-01-01",
+      "endDate": "2020-03-01"
+    }
+  ],
+  "certifications": [
+    {
+      "certificationName": "Certified JavaScript Developer",
+      "issuingOrganization": "Some Organization",
+      "issueDate": "2020-01-01",
+      "expirationDate": "2023-01-01",
+      "credentialId": "12345",
+      "credentialUrl": "https://example.com"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Expert"
+    },
+    {
+      "language": "Gujarati",
+      "proficiency": "Native"
+    }
+  ]
+}
