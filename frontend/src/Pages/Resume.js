@@ -11,11 +11,11 @@ import Skills from '../components/Resume/Skills.js';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub'
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 const MyResumePage = ({data}) => {
-    const [user, setUser] = useState([]);
+    const [user, 
+        setUser] = useState([]);
 
 
     useEffect(() => {

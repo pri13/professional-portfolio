@@ -4,8 +4,7 @@ import Tab from '@mui/material/Tab';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
-import { Grid } from '@mui/material';
-import { Box, Typography } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 
 const Projects = () => {
   const [value, setValue] = React.useState(0);
