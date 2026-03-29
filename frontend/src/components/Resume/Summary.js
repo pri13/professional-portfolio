@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography } 
 from '@mui/material';
+import ProjectCard from '../ProjectCard';
+import PersonIcon from '@mui/icons-material/Person';
 
 
 const Summary = (info) =>{
