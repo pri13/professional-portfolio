@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Box, Typography, Accordion, AccordionSummary, AccordionDetails, Badge } from '@mui/material';
-import { Card, CardContent, CardMedia, CardActions, Button, CardHeader } from '@mui/material';
+import { Card, CardContent, CardHeader } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import moment from 'moment';
 import WorkIcon from '@mui/icons-material/Work';

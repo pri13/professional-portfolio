@@ -1,8 +1,6 @@
 import React from 'react';
-import ProjectCard from '../ProjectCard';
-import { Card, CardContent, CardMedia, Typography, CardActions, Button, CardHeader, Grid } 
+import { Typography } 
 from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person';
 
 
 const Summary = (info) =>{

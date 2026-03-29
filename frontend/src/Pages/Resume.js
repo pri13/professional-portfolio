@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {Typography, IconButton, Toolbar, AppBar, Button, Link} from '@mui/material';
-import {Box, Grid ,Paper, Container, Avatar } from '@mui/material';
-import { Card, CardContent, CardMedia, CardActions, CardHeader } from '@mui/material';
-import ProjectCard from '../components/ProjectCard';
+import {Typography, Button} from '@mui/material';
+import {Box, Grid, Avatar } from '@mui/material';
+import { Card, CardContent } from '@mui/material';
 import Education from '../components/Resume/Education.js'
 import Experience from '../components/Resume/Experience.js'
 import Summary  from '../components/Resume/Summary.js';

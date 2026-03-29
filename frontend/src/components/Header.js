@@ -1,11 +1,9 @@
 import * as React from 'react';
 import '../App.css';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import {Typography, IconButton, Toolbar, AppBar, Box} from '@mui/material';
-import {Menu, Container, Avatar, Button, MenuItem,Tooltip} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
+import {AppBar, Box} from '@mui/material';
+import {Container, Avatar, Button} from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import DescriptionIcon from '@mui/icons-material/Description';
 
@@ -16,32 +14,7 @@ const pages = [
   { pageName: "Resume", icon: <DescriptionIcon />, path:"/resume"}
 ];
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
 function Header() {
-
-  const appBarStyle = {
-    backgroundColor: '#efe7d469',
-  };
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
     <AppBar position="static" sx={{background:"#efe7d469"}}>
       <Container maxWidth="x2">

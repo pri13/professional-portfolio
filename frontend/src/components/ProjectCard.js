@@ -1,7 +1,6 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, CardActions, Button, CardHeader ,Box } 
+import { Card, CardContent, CardMedia, Typography, CardHeader ,Box } 
 from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person';
 
 const ProjectCard = ({ title, description, imageUrl, icon  }) => (
   <Card sx={{ my: 2 }}>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card, CardContent, CardMedia, Typography, CardActions, Button, CardHeader, Grid,Avatar ,Box,  Accordion, AccordionSummary, AccordionDetails } 
+import { Card, CardContent, Typography, CardHeader, Grid ,Box,  Accordion, AccordionSummary, AccordionDetails } 
 from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

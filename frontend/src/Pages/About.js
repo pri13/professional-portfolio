@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Box, Typography, Avatar } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
 
 import SwipeableTextMobileStepper from '../components/SwipeableTextMobileStepper'
 
