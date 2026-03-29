@@ -18,6 +18,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const MyResumePage = ({data}) => {
     const [user, setUser] = useState([]);
 
+
     useEffect(() => {
         const fetchUser = async () => {
           try {
