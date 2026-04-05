@@ -65,7 +65,7 @@ const MyResumePage = ({ data }) => {
                     Senior Full Stack Software Engineer
                   </Typography>
                   <Typography variant="body1" gutterBottom>
-                    📍 {user.address?.city}, {user.address?.state} | 📞 {user.phone} | ✉️ {user.email}
+                     {user.address?.city}, {user.address?.state} |  {user.phone} | {user.email}
                   </Typography>
                   <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
                     {buttons.map((button) => (
