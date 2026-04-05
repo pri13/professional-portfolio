@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Typography, Button, Box, Grid, Avatar, Card } from '@mui/material';
 import Education from '../components/Resume/Education.js';
 import Experience from '../components/Resume/Experience.js';
