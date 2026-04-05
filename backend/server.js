@@ -3,14 +3,14 @@ import cors from 'cors';
 import connectDB from './db.js'
 import resumesRoutes from './routes/ResumeRoutes.js';
 
+
 const app = express();
 
-
 // CORS configuration
-const allowedOrigins = [
-  "https://professional-portfolio-wheat.vercel.app/",
-  "http://localhost:3000"
-];
+const allowedOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(",")
+  : [];
+
 
 app.use(cors());
 app.use(express.json());
@@ -37,15 +37,12 @@ app.use(cors({
 
 
 // Start server
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
 // Middleware
 app.use(express.json());
-
-// Routes
-app.use("/api/resumes", resumesRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running");

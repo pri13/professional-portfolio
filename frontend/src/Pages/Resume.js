@@ -1,122 +1,127 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {Typography, Button} from '@mui/material';
-import {Box, Grid, Avatar } from '@mui/material';
-import { Card, CardContent } from '@mui/material';
-import Education from '../components/Resume/Education.js'
-import Experience from '../components/Resume/Experience.js'
-import Summary  from '../components/Resume/Summary.js';
+import { Typography, Button, Box, Grid, Avatar, Card, CardContent } from '@mui/material';
+import Education from '../components/Resume/Education.js';
+import Experience from '../components/Resume/Experience.js';
+import Summary from '../components/Resume/Summary.js';
 import Skills from '../components/Resume/Skills.js';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub'
+import GitHubIcon from '@mui/icons-material/GitHub';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
+import { useLoader } from '../context/LoaderContext';
+import api from '../api.js';
 
-const MyResumePage = ({data}) => {
-    const [user, 
-        setUser] = useState([]);
+const MyResumePage = ({ data }) => {
+  const [user, setUser] = useState({});
+  const { showLoader, hideLoader } = useLoader();
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        showLoader("Fetching resume data...");
+        const response = await api.get('api/resumes/latest');
+        setUser(response.data);
+        hideLoader();
+      } catch (error) {
+        hideLoader();
+        console.error('Error fetching user data', error);
+      }
+    };
+    fetchUser();
+  }, []);
 
-    useEffect(() => {
-        const fetchUser = async () => {
-          try {
-            const response = await axios.get('https://professional-portfolio-t46e.onrender.com/api/resumes/latest');
-            setUser(response.data);
-          } catch (error) {
-            console.error('Error fetching user data', error);
-          }
-        };
-    
-        fetchUser();
-      }, []);
+  const buttons = [
+    { name: "LinkedIn", icon: <LinkedInIcon />, url: `${user.linkedin}` },
+    { name: "GitHub", icon: <GitHubIcon />, url: `${user.github}` },
+  ];
 
-      const buttons = [
-        { name: "LinkedIn", icon: <LinkedInIcon />, url:`${user.linkedin}` },
-        { name: "GitHub", icon: <GitHubIcon />, url:`${user.github}`},
-        
-      ];
+  const openInNewTab = (url) => {
+    const win = window.open(url, '_blank');
+    if (win != null) win.focus();
+  };
 
-      const openInNewTab = (url) => {
-          const win = window.open(url, '_blank');
-          if (win != null) {
-              win.focus();
-          }
-      };
-   
   return (
-      <Box sx={{ display: 'flex', flexDirection: 'column', m: 2 }}>
-          <Grid container spacing={1}>
-              {/* Profile Picture and Introduction */}
-              <Grid item xs={12} md={12} >
-                  <Card sx={{ p: 0, bgcolor: '#dff0d8' }}>
-                      <CardContent>
-                          <Grid container spacing={4} justifyContent="center" alignItems="center">
-                              {/* Image (Avatar) on the left */}
-                              <Grid item xs={12} md={4} container justifyContent="center">
-                                  <Avatar sx={{ width: 200, height: 200, mb: 2 }} src="/Assets/me.png" />
-                              </Grid>
-                              {/* Text content on the right */}
-                              <Grid item xs={12} md={8} container justifyContent="center">
-                                  <div>
-                                      <Typography variant="h5" gutterBottom align="center">
-                                          {user.firstName} {user.lastName} | BSCE
-                                      </Typography>
-                                      <Typography variant="subtitle1" gutterBottom align="center"  >
-                                          <strong>Senior Full Stack Software Engineer</strong>
-                                      </Typography>
-                                      <Typography variant="subtitle1" gutterBottom align="center">
-                                          Location: {user.address?.city}, {user.address?.state}
-                                      </Typography>
-                                      <Typography variant="subtitle1" gutterBottom align="center">
-                                          Phone: {user.phone}
-                                      </Typography>
-                                      <Typography variant="subtitle1" gutterBottom align="center">
-                                          Email: {user.email}
-                                      </Typography>
-                                      <Box sx={{ display: 'flex' }}>
-                                          {buttons.map((button) => (
-                                              <Button sx={{ marginRight: '8px' }}
-                                                  variant="outlined" color="success"
-                                                  key={button.name}
-                                                  startIcon={button.icon}
-                                                  onClick={() => openInNewTab(button.url)}>
-                                                  {button.name}
-                                              </Button>
-                                          ))}
-                                          <Button target="_blank" href='/Priyank Patel 2.3.pdf' variant="outlined" color="success" onClick={() => openInNewTab('')}>
-                                              <SaveAltIcon />Download Resume
-                                          </Button>
-                                      </Box>
-                                  </div>
-                              </Grid>
-                          </Grid>
-                      </CardContent>
-                  </Card>
+    <Box sx={{ p: { xs: 2, md: 4 }, bgcolor: '#f5f7fa', minHeight: '100vh' }}>
+      <Grid container spacing={4} justifyContent="center">
+        {/* Profile Card */}
+        <Grid item xs={12}>
+          <Card sx={{ p: 3, borderRadius: 3, boxShadow: 6, bgcolor: '#ffffff' }}>
+            <Grid container spacing={4} alignItems="center">
+              {/* Avatar */}
+              <Grid item xs={12} md={4} container justifyContent="center">
+                <Avatar
+                  sx={{ width: 180, height: 180, border: '4px solid #4caf50' }}
+                  src="/Assets/me.png"
+                />
               </Grid>
-              <Grid item xs={12} md={6}>
-                  <Grid container>
-                      <Grid item sm={12}>
-                          <Education data={user.education}></Education>
-                      </Grid>
-                      <Grid item sm={12}>
-                        <Skills skills = {user.skills} ></Skills>
-                      </Grid>
-                  </Grid>
+              {/* User Info */}
+              <Grid item xs={12} md={8} container justifyContent="center">
+                <Box sx={{ textAlign: 'center' }}>
+                  <Typography variant="h4" fontWeight="bold" gutterBottom>
+                    {user.firstName} {user.lastName} | BSCE
+                  </Typography>
+                  <Typography variant="h6" color="text.secondary" gutterBottom>
+                    Senior Full Stack Software Engineer
+                  </Typography>
+                  <Typography variant="body1" gutterBottom>
+                    📍 {user.address?.city}, {user.address?.state} | 📞 {user.phone} | ✉️ {user.email}
+                  </Typography>
+                  <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
+                    {buttons.map((button) => (
+                      <Button
+                        key={button.name}
+                        variant="outlined"
+                        color="success"
+                        startIcon={button.icon}
+                        onClick={() => openInNewTab(button.url)}
+                        sx={{ borderRadius: 2 }}
+                      >
+                        {button.name}
+                      </Button>
+                    ))}
+                    <Button
+                      variant="contained"
+                      color="success"
+                      startIcon={<SaveAltIcon />}
+                      sx={{ borderRadius: 2 }}
+                      onClick={() => openInNewTab('/Priyank Patel 2.3.pdf')}
+                    >
+                      Download Resume
+                    </Button>
+                  </Box>
+                </Box>
               </Grid>
-              {/* Summary */}
-              <Grid item sm={12} md={6}>
-                  <Grid container>
-                      <Grid item sm={12} md={12} >
-                          <Summary summary={user.summary}></Summary>
-                      </Grid>
-                      <Grid item sm={12} md={12}>
-                          <Experience experience={user.experience}></Experience>
-                      </Grid>
-                  </Grid>
-              </Grid>
+            </Grid>
+          </Card>
+        </Grid>
+
+        {/* Education & Skills */}
+        <Grid item xs={12} md={6}>
+          <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <Education data={user.education} />
+            </Grid>
+            <Grid item xs={12}>
+              <Skills skills={user.skills} />
+            </Grid>
           </Grid>
-      </Box>
+        </Grid>
+
+        {/* Summary & Experience */}
+        <Grid item xs={12} md={6}>
+          <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <Summary summary={user.summary} />
+            </Grid>
+            <Grid item xs={12}>
+              <Experience experience={user.experience} />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 
