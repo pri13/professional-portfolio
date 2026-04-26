@@ -2,6 +2,7 @@ import express from 'express';// import express package
 import cors from 'cors';
 import connectDB from './db.js'
 import resumesRoutes from './routes/ResumeRoutes.js';
+import documentRoutes from './routes/DocumentRoutes.js';
 
 
 const app = express();
@@ -20,6 +21,8 @@ connectDB();
 
 // Routes
 app.use('/api/resumes', resumesRoutes);
+app.use('/api/documents', documentRoutes);
+
 
 app.use(cors({
   origin: function (origin, callback) {

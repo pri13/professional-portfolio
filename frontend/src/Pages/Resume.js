@@ -11,25 +11,33 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
 import { useLoader } from '../context/LoaderContext';
 import api from '../api.js';
+import ColdStartBanner from '../components/ColdStartBanner.js';
+
 
 const MyResumePage = ({ data }) => {
   const [user, setUser] = useState({});
   const { showLoader, hideLoader } = useLoader();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let timer;
+
     const fetchUser = async () => {
       try {
         showLoader("Fetching resume data...");
+        setVisible(true);
         const response = await api.get('api/resumes/latest');
         setUser(response.data);
         hideLoader();
+        setVisible(false);
       } catch (error) {
         hideLoader();
+        setVisible(false);
         console.error('Error fetching user data', error);
       }
     };
     fetchUser();
-  },  [showLoader, hideLoader]);
+  }, [showLoader, hideLoader]);
 
   const buttons = [
     { name: "LinkedIn", icon: <LinkedInIcon />, url: `${user.linkedin}` },
@@ -43,6 +51,7 @@ const MyResumePage = ({ data }) => {
 
   return (
     <Box sx={{ p: { xs: 2, md: 4 }, bgcolor: '#f5f7fa', minHeight: '100vh' }}>
+      <ColdStartBanner visible={visible} />
       <Grid container spacing={4} justifyContent="center">
         {/* Profile Card */}
         <Grid item xs={12}>
@@ -65,7 +74,7 @@ const MyResumePage = ({ data }) => {
                     Senior Full Stack Software Engineer
                   </Typography>
                   <Typography variant="body1" gutterBottom>
-                     {user.address?.city}, {user.address?.state} |  {user.phone} | {user.email}
+                    {user.address?.city}, {user.address?.state} |  {user.phone} | {user.email}
                   </Typography>
                   <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
                     {buttons.map((button) => (

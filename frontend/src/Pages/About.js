@@ -11,7 +11,7 @@ const AboutMe = () => {
       alignItems="center"
       justifyContent="center"
       minHeight="100vh"
-      bgcolor="#dff0d8"
+      bgcolor="rgba(239, 231, 212, 0.4)"
       padding={1}
     >
       <Grid container spacing={1}>
@@ -22,36 +22,56 @@ const AboutMe = () => {
           </Box>
         </Grid>
         {/* Right Side - Information */}
-        <Grid item xs={12} md={6} >
+
+        <Grid item xs={12} md={6}>
           <Typography variant="h3" component="h1" gutterBottom>
             Priyank (Pri) Patel, BSCE
           </Typography>
-          <Typography variant="h5" component="h2" gutterBottom sx={{ textDecoration: 'underline' }}>
-            Senior Software Engineer at Sedgwick | Computer Engineering Degree
+
+          <Typography variant="h6" sx={{ fontWeight: '500', mb: 2 }}>
+            Building better systems for the people who rely on them
           </Typography>
+
+          <Typography variant="h6" sx={{ mb: 2, color: "#666" }}>
+            <Box component="span">
+              Senior Software Engineer 
+            </Box>
+
+            <Box component="span" sx={{mx :1}}>
+               •
+            </Box>
+
+            <Box component="span" >
+              Healthcare IT
+            </Box>
+          </Typography>
+
           <Typography variant="body1" paragraph>
-            I am passionate about personal growth and exploration, both professionally and personally. I dedicate time to fitness and enjoy the energy and discipline that come from working out at the gym. I have a deep love for outdoor activities, including rock climbing, hiking, and exploring nature, which fuel my adventurous spirit. Additionally, I am passionate about sports, appreciating the dedication, strategy, and teamwork they inspire. Beyond physical pursuits, I also enjoy traveling and immersing myself in new cultures, gaining fresh perspectives that spark creativity and innovation in my work. I’m a true enthusiast for good coffee and can’t resist indulging in delicious desserts, always on the hunt for the next perfect combination of flavors. These small joys bring balance and delight to my day-to-day life.
+            I’m a software engineer with over five years of experience building software in the healthcare IT space. Most of my work has focused on creating practical, user-focused solutions that make complex systems easier to use and more efficient for the people who rely on them.
           </Typography>
+
           <Typography variant="body1" paragraph>
-            Professionally, I have been working in the IT industry, specifically within the healthcare sector, for over five years. During this time, I have dedicated myself to writing software that enhances end-user experiences, solves complex problems, and creates value-driven products. My work is centered on leveraging technology to make meaningful impacts, improving efficiency and outcomes in a domain as critical as healthcare.
+            I enjoy working through difficult problems, improving existing workflows, and building software that has a real purpose behind it. Healthcare technology can be complex, but that’s also what makes the work meaningful. Small improvements can have a big impact when they help teams work faster, reduce friction, or create a better experience for end users.
           </Typography>
+
           <Typography variant="body1" paragraph>
-            I received my Bachelor's in Computer Engineering from the University of Central Florida, an institution that played a significant role in shaping me into the person I am today. The university provided me with the necessary education and core foundation to thrive in my career and pursue my passion for technology.
+            I earned my Bachelor’s degree in Computer Engineering from the University of Central Florida, where I built the foundation that shaped my path into software development. Since then, I’ve continued to grow by learning new technologies, refining how I build, and staying curious about better ways to solve problems.
           </Typography>
+
           <Typography variant="body1" paragraph>
-            As a technology enthusiast, I am deeply committed to learning emerging technologies and applying them to solve complex problems through efficient and optimal solutions. With a lifelong love for computers, I find immense joy in working with technology, whether it’s tackling challenging projects, optimizing workflows, or driving impactful digital transformations.
+            Outside of work, I value staying active and challenging myself. I enjoy working out, rock climbing, hiking, traveling, and spending time outdoors. I’m also someone who appreciates good coffee, great desserts, and quality time with family and friends.
           </Typography>
+
           <Typography variant="body1" paragraph>
-            Beyond my personal interests, I am passionate about investing wisely. Whether it’s in stocks, business ventures, or opportunities that create long-term value, I enjoy strategically placing my resources where they matter most.
+            I’ve called Jacksonville, Florida home for more than 20 years, and I’m grateful for the people, experiences, and opportunities that continue to shape who I am.
           </Typography>
-          <Typography variant="body1" paragraph>
-            Above all, I value spending quality time with my family and friends. Whether it’s celebrating special moments or simply enjoying meaningful conversations, I cherish the connections that bring warmth and happiness to my life.
+
+          <Typography sx={{my:2}} >
+            Based in Jacksonville, Florida, I’m always open to connecting with others in the tech community, sharing ideas, and exploring new opportunities. If you’d like to chat about software development, healthcare technology, or just want to say hi, feel free to reach out!
           </Typography>
-          <Typography variant="body1" component="h5">
-            Lastly, I am a U.S. citizen and have been living in Jacksonville, FL for the last 20+ years.
-          </Typography>
+
           <Typography variant="h5" component="h5">
-            Work Hard, Play Hard...
+            Work hard. Play hard.
           </Typography>
         </Grid>
       </Grid>
