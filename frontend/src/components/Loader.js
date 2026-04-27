@@ -7,6 +7,8 @@ export default function Loader({ open, message = "Loading..." }) {
       sx={{
         color: '#fff',
         zIndex: (theme) => theme.zIndex.modal + 1,
+        backdropFilter: 'blur(1px)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         flexDirection: 'column',
       }}
     >
