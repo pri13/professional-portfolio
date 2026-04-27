@@ -182,7 +182,7 @@ const documents = [
     topCategory: 'IT Admin',
     section: 'Hardware',
     subgroup: 'Learning Azure',
-    fileUrl: '/pdfs/ITAdmin/Hardware/Azure/Azure.pdf',
+    fileUrl: '/pdfs/ITAdmin/Azure/Azure.pdf',
     tags: ['IT', 'Admin', 'Hardware'],
     sortOrder: 3,
   },
