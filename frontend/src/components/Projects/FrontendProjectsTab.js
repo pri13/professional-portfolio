@@ -1,41 +1,53 @@
-import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardActions,
-  Button,
-  Grid,
-  Typography,
-  Paper,
-  Box,
-  Alert
-} from '@mui/material';
+import React, { useEffect, useState } from "react";
+import { Grid, Card, CardContent, Typography, Button, Chip, Box, Divider, CardHeader } from "@mui/material";
+import { useHistory } from "react-router-dom";
 
-const frontendProjects = [
-  {
-    id: 1,
-    title: 'Professional Portfolio',
-    description: 'Personal portfolio built with React and MUI.',
-    githubUrl: 'https://github.com/pri13/professional-portfolio',
-    liveUrl: 'https://professional-portfolio-wheat.vercel.app',
-  },
-  {
-    id: 2,
-    title: 'Frontend Project 2',
-    description: 'Replace this with your real frontend project.',
-    githubUrl: '#',
-    liveUrl: '#',
-  },
-];
+import api from "../../api.js";
 
-const FrontendProjectsTab = () => {
+export default function ProjectsPage() {
+  const [projects, setProjects] = useState([]);
+  const history = useHistory();
+
+  useEffect(() => {
+    const fetch = async () => {
+      const response = await api.get('api/projects/getprojects', { params: { category: 'frontend' } });
+      setProjects(response.data);
+    };
+    fetch();
+  }, []);
+
   return (
-    <Box elevation={3} sx={{ p: 3, borderRadius: 3, mt: 3 }}>
-           <Alert severity="info" sx={{ mb: 3 }}>
-             This section is under construction. Please check back later for frontend projects!
-           </Alert>
-       </Box>
-  );
-};
+    <Box >
+      <Grid container spacing={3}>
+        {projects.map((p) => (
+          <Grid item xs={12} md={12} key={p._id}>
+            <Card sx={{ height: "100%", '&:hover': { boxShadow: 6, backgroundColor: '#dff0d8' } }}>
+              <CardContent>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 2, mb: 2 }}>
+                  <Typography variant="h6">{p.title}</Typography>
+                  <Button
+                    color="success"
+                    size ="small"
+                    variant="contained"
+                    onClick={() =>
+                      history.push(`/projects/${p.slug}`)}>
+                    View Details
+                  </Button>
+                </Box>
 
-export default FrontendProjectsTab;
+                <Divider sx={{ mb: 2 }} />
+
+                <Typography variant="body2" sx={{ mt: 1, mb: 2 }}>
+                  {p.summary}
+                </Typography>
+
+                <Chip label={p.category} size="small" sx={{ mr: 1 }} />
+                <Chip label={p.projectType} size="small" />
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+}

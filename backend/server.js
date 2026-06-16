@@ -3,7 +3,7 @@ import cors from 'cors';
 import connectDB from './db.js'
 import resumesRoutes from './routes/ResumeRoutes.js';
 import documentRoutes from './routes/DocumentRoutes.js';
-
+import ProjectRoutes from './routes/ProjectRoutes.js';
 
 const app = express();
 
@@ -22,7 +22,7 @@ connectDB();
 // Routes
 app.use('/api/resumes', resumesRoutes);
 app.use('/api/documents', documentRoutes);
-
+app.use('/api/projects', ProjectRoutes);
 
 app.use(cors({
   origin: function (origin, callback) {

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Grid, Typography, Button, Avatar } from '@mui/material';
+import { Box, Grid, Typography, Button, Avatar, Card, CardContent } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
 
 const HomePage = () => {
   const openInNewTab = (url) => {
@@ -40,17 +41,8 @@ const HomePage = () => {
             <Typography variant="body1" sx={{ mb: 3 }}>
               I create modern and responsive web applications with clean code and beautiful UI.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' }, flexWrap: 'wrap' }}>
-              <Button variant="contained" color="secondary" onClick={() => openInNewTab('/projects')}>
-                View Projects
-              </Button>
-              <Button variant="outlined" color="inherit" onClick={() => openInNewTab('/contact')}>
-                Contact Me
-              </Button>
-            </Box>
 
-            {/* Social Buttons */}
-            <Box sx={{ display: 'flex', gap: 2, mt: 4, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: { xs: 'center', md: 'flex-start' } }}>
               <Button
                 variant="outlined"
                 startIcon={<LinkedInIcon />}
@@ -68,11 +60,13 @@ const HomePage = () => {
               <Button
                 variant="outlined"
                 startIcon={<EmailIcon />}
-                onClick={() => openInNewTab('mailto:email@example.com')}
+                onClick={() => openInNewTab('mailto:Priyankp295@gmail.com')}
               >
                 Email
               </Button>
             </Box>
+
+    
           </Box>
         </Grid>
 

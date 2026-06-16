@@ -6,6 +6,8 @@ import Home from '../src/Pages/Home';
 import Projects from '../src/Pages/Projects';
 import Resume from '../src/Pages/Resume';
 import About from '../src/Pages/About'
+import ProjectsPage from './components/Projects/FrontendProjectsTab';
+import ProjectDetails from './components/Projects/ProjectDetails';
 import { LoaderProvider } from './context/LoaderContext';
 
 
@@ -18,10 +20,20 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/projects" component={Projects} />
             <Route path="/resume" component={Resume} />
             <Route path="/about" component={About} />
-          </Switch>     
+
+            <Route
+              exact
+              path="/projects"
+              component={Projects}
+            />
+
+            <Route
+              path="/projects/:slug"
+              component={ProjectDetails}
+            />
+          </Switch>
         </Router>
       </LoaderProvider>
     </div>
