@@ -18,7 +18,7 @@ const ColdStartBanner = ({ visible }) => {
         },
       }}
     >
-      This app may take up to a minute to load after inactivity. We’re working to make startup faster.
+      This is a cold start. The server is waking up and may take a few seconds (Up to Minute) to respond. Thank you for your patience!
     </Alert>
   );
 };
