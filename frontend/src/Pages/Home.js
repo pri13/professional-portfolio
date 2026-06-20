@@ -17,7 +17,7 @@ const HomePage = () => {
       <Grid container spacing={4} alignItems="center">
         
         {/* Left Side - Photo */}
-        <Grid item xs={12} md={5} container justifyContent="center">
+        <Grid item xs={12} md={5} container justifyContent="center"  >
           <Avatar
             src="/Assets/me-2.jpg"
             sx={{

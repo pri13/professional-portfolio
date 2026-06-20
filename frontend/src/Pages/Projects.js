@@ -7,6 +7,10 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import FrontendProjectsTab from '../components/Projects/FrontendProjectsTab';
 import BackendProjectsTab from '../components/Projects/BackendProjectsTab';
 import DocumentsTab from '../components/Projects/DocumentsTab';
+import DisplayProjects from '../components/Projects/ShowProjects.js';
+import ColdStartBanner from '../components/ColdStartBanner.js';
+
+
 
 const TabPanel = ({ children, value, index }) => {
   return (
