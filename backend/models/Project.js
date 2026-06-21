@@ -107,7 +107,12 @@ const ProjectSchema = new mongoose.Schema(
             type: String,
             enum:["completed", "in-progress", "planned", "maintenance"],
             default: "completed"
+        },
+        companyName :{
+            type: String,
+            default: null
         }
+
     },
     {
         timestamps: true

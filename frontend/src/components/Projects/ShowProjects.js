@@ -40,12 +40,14 @@ export default function DisplayProjects({ category }) {
         <Box >
             <ColdStartBanner visible={visible} />
             <Grid container spacing={3}>
-                {projects.map((p) => (
+                {projects.map((p, index) => (
                     <Grid item xs={12} md={12} key={p._id}>
                         <Card sx={{ height: "100%", '&:hover': { boxShadow: 6, backgroundColor: '#dff0d8' } }}>
                             <CardContent>
                                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 2, mb: 2 }}>
-                                    <Typography variant="h6">{p.title}</Typography>
+                                    <Typography variant="h6"> 
+                                            {index +1}. {p.title}
+                                    </Typography>
                                     <Button
                                         color="success"
                                         size="small"
