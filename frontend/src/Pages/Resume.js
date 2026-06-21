@@ -107,19 +107,19 @@ const MyResumePage = ({ data }) => {
       </Grid>
 
       <Grid container spacing={4}>
-        <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 } }}>
+        <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 }, p:0 }}>
           <Summary summary={user.summary} />
         </Grid>
 
-        <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
+        <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 }, p:0}}>
           <Education data={user.education} />
         </Grid>
 
-        <Grid item xs={12} md={6} sx={{ order: { xs: 3, md: 3 } }}>
+        <Grid item xs={12} md={6} sx={{ order: { xs: 3, md: 3 }, p:0}}>
           <Skills skills={user.skills} />
         </Grid>
 
-        <Grid item xs={12} md={6} sx={{ order: { xs: 4, md: 4 } }}>
+        <Grid item xs={12} md={6} sx={{ order: { xs: 4, md: 4 }, p:0 }}>
           <Experience experience={user.experience} />
         </Grid>
       </Grid>
