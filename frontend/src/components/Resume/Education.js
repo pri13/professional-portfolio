@@ -10,7 +10,7 @@ const Education = ({data}) => {
         return <Typography variant="body1">No education data available</Typography>;
     }
     return (
-        <Card sx={{ my: 2, }} >
+        <Card sx={{ my: 2}} >
             <CardHeader
                 avatar={
                     <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>

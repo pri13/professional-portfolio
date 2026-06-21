@@ -50,7 +50,7 @@ const MyResumePage = ({ data }) => {
   };
 
   return (
-    <Box sx={{ p: { xs: 2, md: 4 }, bgcolor: '#f5f7fa', minHeight: '100vh' }}>
+    <Box sx={{ p: 1, bgcolor: '#f5f7fa', minHeight: '100vh' }}>
       <ColdStartBanner visible={visible} />
       <Grid container spacing={4} justifyContent="center">
         {/* Profile Card */}
