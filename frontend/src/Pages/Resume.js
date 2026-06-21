@@ -104,29 +104,23 @@ const MyResumePage = ({ data }) => {
             </Grid>
           </Card>
         </Grid>
+      </Grid>
 
-        {/* Education & Skills */}
-        <Grid item xs={12} md={6}>
-          <Grid container spacing={4}>
-            <Grid item xs={12}>
-              <Education data={user.education} />
-            </Grid>
-            <Grid item xs={12}>
-              <Skills skills={user.skills} />
-            </Grid>
-          </Grid>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 } }}>
+          <Summary summary={user.summary} />
         </Grid>
 
-        {/* Summary & Experience */}
-        <Grid item xs={12} md={6}>
-          <Grid container spacing={4}>
-            <Grid item xs={12}>
-              <Summary summary={user.summary} />
-            </Grid>
-            <Grid item xs={12}>
-              <Experience experience={user.experience} />
-            </Grid>
-          </Grid>
+        <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
+          <Education data={user.education} />
+        </Grid>
+
+        <Grid item xs={12} md={6} sx={{ order: { xs: 3, md: 3 } }}>
+          <Skills skills={user.skills} />
+        </Grid>
+
+        <Grid item xs={12} md={6} sx={{ order: { xs: 4, md: 4 } }}>
+          <Experience experience={user.experience} />
         </Grid>
       </Grid>
     </Box>
