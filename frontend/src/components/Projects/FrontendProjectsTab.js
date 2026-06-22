@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Grid, Card, CardContent, Typography, Button, Chip, Box, Divider, CardHeader } from "@mui/material";
-import { useHistory } from "react-router-dom";
+import React from "react";
+import { Box } from "@mui/material";
 import DisplayProjects from "./ShowProjects.js";
 
-import api from "../../api.js";
-
-export default function FrontendProjectsTab() { 
+export default function FrontendProjectsTab() {
   return (
-    <Box >
+    <Box>
       <DisplayProjects category="frontend" />
-      </Box>
-
+    </Box>
   );
 }

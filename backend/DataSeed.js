@@ -238,33 +238,57 @@ const projects = [
     role: "Software Developer",
     summary:
       "Billing dashboard for managing invoices, payments, and financial reporting.",
+
     problem:
       "Billing coordinators and accounting staff relied on multiple systems and manual processes to manage invoices, track payments, perform reconciliations, and monitor financial performance. Financial reporting and record exports were time-consuming, while visibility into revenue, expenses, collections, and invoice status was limited.",
-    solution:
-      "Developed a centralized accounting dashboard and billing workflow application that combined financial reporting, invoice management, collections tracking, and accounting operations into a single interface.",
-    techstack: ["Vue.js 2", "JavaScript", "Lodash", "HTML", "CSS"],
+
+    solution: "Developed a centralized accounting dashboard that combined financial reporting, invoice management, collections tracking, and core accounting workflows into a single interface. The application displayed a list of invoices with contextual action menus for each record, enabling users to perform AP/AR adjustments, approve or reject bills for payment through a dedicated UI workflow, initiate reconsideration processes, log vendor credits, manage write-offs, upload supporting documents, and view reminders and activity history associated with each invoice. The system was designed using a ledger-based architecture where financial records were immutable and updates were not permitted; instead, all adjustments were recorded as new entries to maintain audit integrity and ensure accurate financial tracking. Implemented role-based access control and permissions to restrict actions based on user roles and responsibilities. Additionally, adjustments and write-offs were tracked at the line-item level, with full historical context loaded per invoice to provide complete audit visibility and traceability.",
+   
+    techstack: ["Vue.js 2", "JavaScript", "Lodash", "HTML", "CSS", "bootstrap 4", "VueResource", "Moment", "Vuex"],
     keyContributions: [
-      "Designed and implemented dashboard views displaying total client payments received, vendor payments made, gross revenue, and net profit.",
-      "Developed an interactive invoice management system allowing users to view and manage claimant billing records.",
-      "Built invoice detail views with line items, supporting documents, and transaction history.",
-      "Implemented workflows for invoice approvals, payment tracking, audit logging, and document uploads.",
-      "Developed functionality for adjustments, credits, refunds, write-offs, purchase returns, and reconciliation activities.",
-      "Added export capabilities for Excel, PDF, and CSV reporting.",
-      "Created tools to support collections efforts and outstanding balance management."
+        "Designed and implemented a centralized accounting dashboard providing real-time financial visibility, including client payments received, vendor payments issued, gross revenue, and net profitability metrics.",
+
+        "Built a scalable invoice management system supporting end-to-end lifecycle tracking from creation to payment, including status management and operational workflows.",
+
+        "Developed detailed invoice views with support for line-item breakdowns, attached documentation, and complete transactional history for audit and reconciliation purposes.",
+
+        "Implemented structured workflows for invoice approval, payment processing, audit logging, and document management to support finance operations.",
+
+        "Engineered financial adjustment capabilities including AP/AR adjustments, credits, refunds, write-offs, purchase returns, and reconciliation entries within a ledger-based system.",
+
+        "Built export functionality enabling financial data extraction in Excel, PDF, and CSV formats for reporting and external analysis.",
+
+        "Developed collections and receivables management tools to track outstanding balances and support recovery workflows.",
+
+        "Implemented role-based access control to enforce permissions across financial actions, ensuring segregation of duties and compliance with accounting controls.",
+
+        "Designed line-item level tracking for adjustments and write-offs with full historical audit trails per invoice.",
+
+        "Integrated document management workflows allowing users to upload, attach, and manage supporting financial documentation per invoice and transaction."    
     ],
-    impact: [
-      "Centralized accounting and billing workflows into a single application.",
-      "Reduced manual effort required for financial reporting and record management.",
-      "Improved visibility into revenue, expenses, profitability, and invoice status.",
-      "Enabled faster reconciliation and collections processes through streamlined workflows and reporting tools.",
-      "Provided users with self-service access to financial data and exportable reports."
+    impact: [    
+        "Unified fragmented accounting, billing, and collections workflows into a single centralized platform, reducing operational complexity.",
+
+        "Significantly reduced manual effort in financial reporting, reconciliation, and invoice tracking through automation and structured workflows.",
+
+        "Improved financial transparency by providing real-time visibility into revenue, expenses, outstanding balances, and profitability metrics.",
+
+        "Accelerated invoice approval, payment processing, and reconciliation cycles through streamlined workflow automation.",
+
+        "Enhanced audit readiness by implementing ledger-based immutable financial records with full traceability of all adjustments.",
+
+        "Reduced dependency on manual reporting by enabling self-service access to structured financial data and exportable reports.",
+
+        "Improved accuracy and consistency of financial records by enforcing standardized workflows and role-based access controls.",
+
+        "Enabled faster collections and reduced outstanding receivables through improved tracking and visibility of overdue accounts."
     ],
     isFeatured: true,
-    imageUrl:null,
+    imageUrl: null,
     githubUrl: null,
     liveDemoUrl: null,
-    startDate:null,
-    endDate:null,
+    startDate: null,
+    endDate: null,
     status: "completed",
     displayOrder: 1
   },
@@ -284,37 +308,45 @@ const projects = [
       "Designed and implemented an interactive EDI claim viewer that translated raw EDI transactions into a structured, human-readable format.The application parsed EDI claim data and organized it into labeled sections, displaying segment names, business context, and claim details in a format accessible to billing coordinators, analysts, and operations personnel.To further improve troubleshooting workflows, the solution incorporated payer acknowledgment analysis by processing 999 transactions and presenting rejection information in a user-friendly format.",
     techstack: ["Vue.js 2", "JavaScript", "HTML", "CSS", "Lodash", "Regex", "Vuex", "Vue Router", "Bootstrap 4", "VueResource"],
     keyContributions: [
-      "Developed Vue.js-based interface for viewing and analyzing EDI claim transactions.",
-      "Built functionality to transform raw 837 EDI data into structured business-friendly views.",
-      "Organized EDI content into labeled sections and segments to improve readability.",
-      "Implemented parsing and visualization of 999 acknowledgment transactions.",
-      "Created rejection analysis workflows that identified and displayed claim validation failures.",
-      "Added contextual descriptions for rejection codes and transaction errors.",
-      "Highlighted problematic claim segments and data elements to accelerate issue resolution.",
-      "Improved navigation and usability for users with limited EDI knowledge.",
-      "Integrated backend services to retrieve claim and acknowledgment transaction data."
+      "Developed a Vue.js-based interface for viewing and analyzing EDI claim transactions, enabling users to review both outbound 837 claim files and inbound 999 acknowledgment responses.",
+      "Built functionality to transform raw 837 EDI data into structured, business-friendly views that were accessible to non-technical users.",
+      "Organized EDI transactions into clearly labeled sections, loops, and segments to improve readability and simplify claim analysis.",
+      "Implemented parsing and visualization of 999 acknowledgment transactions to provide insight into claim acceptance and rejection outcomes.",
+      "Created rejection analysis workflows that identified validation failures and presented detailed rejection information to users.",
+      "Added contextual descriptions for rejection codes and transaction errors to assist users in understanding and resolving claim issues.",
+      "Highlighted problematic claim segments and data elements associated with validation failures to accelerate troubleshooting.",
+      "Enhanced navigation and overall user experience, reducing reliance on specialized EDI knowledge for claim review and investigation.",
+      "Integrated backend services to retrieve, process, and display claim and acknowledgment transaction data within a unified interface."
     ],
     impact: [
-      "Reduced dependency on specialized EDI resources for claim troubleshooting.",
-      "Accelerated identification of claim submission issues and payer rejections.",
-      "Improved operational efficiency for billing and revenue cycle teams.",
-      "Reduced time required to investigate rejected claims.",
-      "Increased visibility into claim processing outcomes.",
-      "Enabled users with limited EDI knowledge to independently diagnose claim issues.",
-      "Streamlined claim correction and resubmission workflows."
+      "Reduced dependency on specialized EDI resources by providing users with self-service claim analysis and troubleshooting tools.",
+
+      "Accelerated identification of claim submission issues and payer rejections through automated parsing and visualization of EDI transactions.",
+
+      "Improved operational efficiency for billing and revenue cycle teams by centralizing claim and acknowledgment data into a single interface.",
+
+      "Reduced the time required to investigate rejected claims and eliminated the need for users to rely on IT support to determine rejection causes.",
+
+      "Increased visibility into claim processing outcomes by presenting claim statuses, acknowledgment responses, and validation results in a user-friendly format.",
+
+      "Enabled users with limited EDI knowledge to independently diagnose claim issues and understand rejection details.",
+
+      "Streamlined claim correction and resubmission workflows by highlighting problematic claim segments and providing actionable error information.",
+
+      "Improved collaboration between billing, operations, and technical teams by making complex EDI transaction data more accessible and understandable."
     ],
     isFeatured: true,
-    imageUrl:null,
+    imageUrl: null,
     githubUrl: null,
     liveDemoUrl: null,
-    startDate:null,
-    endDate:null,
+    startDate: null,
+    endDate: null,
     status: "completed",
-    displayOrder: 1
+    displayOrder: 2
   },
 
   // FRONTEND - Reconsideration & Appeals Automation
-{
+  {
     title: "Reconsideration & Appeals Automation Platform",
     slug: "Reconsideration-appeals-automation",
     category: "frontend",
@@ -323,37 +355,46 @@ const projects = [
     role: "Software Developer",
     summary:
       "Vue.js tool to visualize 837/999 EDI transactions in a readable format.",
-    problem: "Billing coordinators were required to manually prepare reconsideration and correction packages when claims were denied or underpaid. This process involved gathering billing data, completing forms, generating supporting documentation, assembling claim packages, delivering them through multiple channels, and manually tracking submission status. The workflow was time-consuming, error-prone, and difficult to monitor.",
+    problem: "Billing coordinators were required to manually prepare reconsideration and correction packages when claims were denied, underpaid, or required additional review. The process involved gathering billing data from multiple sources, completing forms, generating supporting documentation, assembling claim packages, and manually drafting PDF correspondence for each submission. Users were responsible for selecting delivery methods, tracking submission status, and maintaining supporting records. This workflow was time-consuming, error-prone, difficult to scale, and provided limited visibility into the status of submitted reconsideration requests.",
     solution:
       "Designed and developed an end-to-end reconsideration and appeals workflow that automated document preparation, package generation, delivery, and tracking.",
     techstack: ["Vue.js 2", "JavaScript", "Lodash", "HTML", "CSS", "Vuex", "Vue Router", "Bootstrap 4"],
     keyContributions: [
-      "Designed a dynamic user interface that pre-populated billing, claimant, and invoice data, reducing manual data entry.",
-      "Built template-driven workflows for reconsideration and correction requests, allowing users to select predefined appeal templates retrieved from backend services.",
-      "Developed PDF generation workflows that created professional reconsideration packages with cover letters, billing summaries, and supporting documentation.",
-      "Implemented automated form generation for healthcare and workers' compensation documents, including HCFA, DWC, and UB-04 forms.",
-      "Integrated Spire.PDF to populate forms and generate finalized documents programmatically.",
-      "Built document packaging services that assembled cover letters, invoices, claim forms, and supporting evidence into a single submission package.",
-      "Developed delivery workflows supporting fax, mail, and EDI transmission methods.",
-      "Implemented USPS tracking integration to store tracking numbers and provide real-time delivery status updates directly within the application.",
-      "Created audit and tracking capabilities allowing users to monitor package delivery and follow-up activities."
+      "Designed and implemented a dynamic user interface that automatically pre-populated billing, claimant, invoice, amount paid, and outstanding balance information while enabling users to select relevant supporting documents for inclusion in reconsideration packages, reducing manual data entry, improving data accuracy, and streamlining the reconsideration workflow.",
+
+      "Built template-driven reconsideration and correction workflows that allowed users to select predefined appeal templates retrieved from backend services, ensuring consistency across submissions.",
+
+      "Developed automated PDF generation capabilities that created professional reconsideration packages, including cover letters, billing summaries, invoices, and supporting documentation based on user selections.",
+
+      "Implemented automated generation of healthcare and workers' compensation forms, including HCFA, DWC, and UB-04, SBR documents.",
+
+      "Integrated Spire.PDF to populate, generate, and finalize claim-related documents programmatically, eliminating the need for manual form preparation.",
+
+      "Developed document packaging services that consolidated cover letters, invoices, claim forms, and supporting evidence into a single submission package (one PDF) ready for delivery.",
+
+      "Built multi-channel delivery workflows enabling users to distribute reconsideration packages through fax, mail, or electronic submission methods.",
+
+      "Integrated USPS tracking services to store tracking information and provide real-time delivery status updates directly within the application.",
+
+      "Implemented audit trails and submission tracking capabilities, allowing users to monitor package delivery status, review historical activity, and manage follow-up actions efficiently."
     ],
     impact: [
-      "Significantly reduced the manual effort required to prepare reconsideration and correction packages.",
+      "Automated previously manual document preparation and submission processes, reducing administrative effort and improving workflow efficiency for billing coordinators.",
+
       "Improved consistency and accuracy of appeal submissions through template-driven document generation.",
       "Streamlined collections and dispute resolution workflows by automating package assembly and delivery.",
       "Increased visibility into submission and delivery status through integrated tracking and monitoring tools.",
       "Enabled billing coordinators to manage the entire appeals process from a single application."
     ],
     isFeatured: true,
-    imageUrl:null,
+    imageUrl: null,
     githubUrl: null,
     liveDemoUrl: null,
-    startDate:null,
-    endDate:null,
+    startDate: null,
+    endDate: null,
     status: "completed",
-    displayOrder: 1
-},
+    displayOrder: 3
+  },
 
 
   // BACKEND - SLP Ingestion
@@ -372,7 +413,7 @@ const projects = [
       "Designed and implemented a fully automated .NET 8 Worker Service-based ingestion platform to process, validate, and load SLP claim data into downstream systems. The solution leveraged a configuration-driven parsing engine, allowing new file layouts and field mappings to be introduced without code changes. The system incorporated fault tolerance, structured logging, and high-performance bulk data loading to support reliable large-scale processing.",
     techstack: [".NET 8", "C#", "Worker Service", "SQL Server", "Polly", "Serilog"],
     keyContributions: [
-        "Designed and implemented an end-to-end automated ingestion pipeline for SLP claim data.",
+      "Designed and implemented an end-to-end automated ingestion pipeline for SLP claim data.",
       "Built a reusable configuration-driven fixed-width parsing engine capable of supporting evolving file layouts.",
       "Developed a layered architecture (Domain, Application, Infrastructure, Worker) following Clean Architecture principles.",
       "Implemented configurable field mapping and validation workflows to dynamically interpret incoming file structures.",
@@ -391,11 +432,11 @@ const projects = [
       "Delivered a maintainable, extensible ingestion framework capable of supporting future data feeds and business requirements."
     ],
     isFeatured: true,
-    imageUrl:null,
+    imageUrl: null,
     githubUrl: null,
     liveDemoUrl: null,
-    startDate:null,
-    endDate:null,
+    startDate: null,
+    endDate: null,
     status: "completed",
     displayOrder: 1
   },
@@ -410,10 +451,10 @@ const projects = [
     role: "Backend Developer",
     summary:
       "C# .NET Framework system for processing 837/999 EDI transactions.",
-    problem: "Monolithic EDI system was hard to maintain and scale.",
-    solution:
-      "Refactored into client-specific processing modules for better scalability.",
-    techstack: ["C#", ".NET Framework 4.8", "SQL Server"],
+    problem: "The original EDI console application was built as a monolithic solution designed to support only one or two clients. As the business expanded and additional clients required EDI-based billing exports, the system was not able to scale effectively due to its tightly coupled and non-configurable architecture. This led to significant challenges when implementing client-specific EDI requirements, as each new client required custom code changes, making the solution difficult to maintain, extend, and standardize.",
+
+    solution: "Refactored the existing .NET application into a scalable, modular architecture by separating the solution into client-specific projects for each trading partner. Introduced a configuration-driven approach using SQL configuration tables to manage and customize EDI requirements per client, reducing the need for code changes and enabling faster onboarding of new trading partners. The system generated 837 EDI files for bill exports by retrieving eligible invoices through stored procedures, dynamically constructing client-specific 837 transaction files, and securely transmitting them to trading partners via SFTP. Additionally, the system ingested 999 and 277 acknowledgment files from trading partners and linked them back to the corresponding sent bills, enabling end-to-end visibility of claim submission status and response tracking.",
+    techstack: ["C#", ".NET Framework 4.8", "ADo.NET", "WINSCP", "SQL Server"],
     keyContributions: [
       "Processed 837 claims",
       "Handled 999 acknowledgments",
@@ -424,11 +465,11 @@ const projects = [
       "Simplified client onboarding"
     ],
     isFeatured: true,
-    imageUrl:null,
+    imageUrl: null,
     githubUrl: null,
     liveDemoUrl: null,
-    startDate:null,
-    endDate:null,
+    startDate: null,
+    endDate: null,
     status: "completed",
     displayOrder: 1
   },
@@ -452,13 +493,13 @@ const projects = [
       "Showcases professional and personal projects"
     ],
     isFeatured: true,
-    imageUrl:null,
+    imageUrl: null,
     githubUrl: null,
     liveDemoUrl: null,
-    startDate:null,
-    endDate:null,
+    startDate: null,
+    endDate: null,
     status: "completed",
-    displayOrder: 1
+    displayOrder: 2
   }
 ];
 
@@ -469,7 +510,7 @@ const seedDocuments = async () => {
     const conn = await mongoose.connect(process.env.MONGO_URI);
 
     await Document.deleteMany({});
-    
+
     await Company.deleteMany({});
     await Project.deleteMany({});
 

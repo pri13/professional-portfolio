@@ -4,19 +4,20 @@ import Project from '../models/Project.js';
 
 const router = express.Router();
 
-
+// GET /api/projects/getprojects
+// fetch all Project(s) by category and sort newest at the top Descending Order.
 router.get('/getprojects', async (req, res) => {
     try {
-            const projects = await Project.find({ category: req.query.category });
-             res.json(projects);
+        const projects = await Project.find({ category: req.query.category }).sort({ displayOrder: -1 });
+        res.json(projects);
     }
     catch (err) {
         res.status(500).json({ message: err.message });
     }
-
 });
 
-// GET /api/projects/:slug  -> fetch single project by slug
+// GET /api/projects/:slug  -
+// fetch single project by slug
 router.get('/:slug', async (req, res) => {
     try {
         const slug = req.params.slug;
