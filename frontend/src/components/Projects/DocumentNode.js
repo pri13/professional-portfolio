@@ -147,7 +147,7 @@ const DocumentNode = ({ node, level = 0 }) => {
         mb: 0.5,
         ml: level > 0 ? 1 : 0,
         '&:hover': {
-          backgroundColor: 'rgba(0, 0, 0, 0.04)',
+          backgroundColor:'#dff0d8' 
         },
       }}
     >
